@@ -40,4 +40,6 @@ Might have been overkill with nextjs, but seems like React is moving towards ser
 * React 18
 * Nextjs 13 - quickly setups up everything I need for an react app that involving routing, server side/static rendering and seo
 * Stitches - used for styling, probably would have used tailwindcss if css in js was not encouraged
-* @tanstack/react-table
+* mapbox - show location of contributor
+* @tanstack/react-table - easily create tables
+* octokit - fetch GitHub rest api
