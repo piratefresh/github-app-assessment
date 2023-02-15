@@ -35,7 +35,9 @@ export default async function UserPage({ params }: UserPageProps) {
           width={180}
           alt={`avatar of ${user.login}`}
         />
-        <h1>{user.login}</h1>
+        <Link href={user.html_url} target="_blank">
+          <h1>{user.login}</h1>
+        </Link>
         <p>{user.bio}</p>
         <p>{user.email}</p>
         <p>{user.location}</p>

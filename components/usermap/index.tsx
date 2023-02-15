@@ -4,7 +4,7 @@ import { geocode } from "@/lib/geocode";
 import { styled } from "@/stitches.confjg";
 import React from "react";
 import Map, { Marker } from "react-map-gl";
-import Pin from "../pin";
+import { Pin } from "../pin";
 
 const Container = styled("div", {
   position: "relative",

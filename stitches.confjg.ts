@@ -1,3 +1,5 @@
+import { slate } from "@radix-ui/colors";
+
 import { createStitches } from "@stitches/react";
 
 export const screens = {
@@ -22,6 +24,8 @@ export const {
     colors: {
       black: "#000",
       white: "#fff",
+
+      ...slate,
 
       rose50: "#fff1f2",
       rose100: "#ffe4e6",
@@ -264,6 +268,9 @@ export const {
       blueGray700: "#334155",
       blueGray800: "#1e293b",
       blueGray900: "#0f172a",
+      // Semantic colors
+      loContrast: "$slate12",
+      hiContrast: "$slate1",
     },
     space: {
       "1": "8px",
