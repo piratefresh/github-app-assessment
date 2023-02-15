@@ -4,7 +4,6 @@ import { styled } from "@/stitches.confjg";
 export const Container = styled("div", {
   display: "flex",
   flexDirection: "column",
-  width: "100%",
   justifyContent: "center",
   alignItems: "center",
   gap: "$5",
