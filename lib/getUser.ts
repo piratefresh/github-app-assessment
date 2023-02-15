@@ -9,15 +9,18 @@ export const getUser = cache(
     username,
   }: {
     username: string;
-  }): Promise<GetUserResponse["data"]> => {
+  }): Promise<GetUserResponse["data"] | null> => {
     const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN,
     });
+    try {
+      const req = await octokit.request("GET /users/{username}", {
+        username: username,
+      });
 
-    const req = await octokit.request("GET /users/{username}", {
-      username: username,
-    });
-
-    return req.data;
+      return req.data;
+    } catch (error) {
+      return null;
+    }
   }
 );

@@ -35,3 +35,10 @@ export const RepoCard = styled("div", {
   borderRadius: "$md",
   padding: "$2",
 });
+
+export const NotFoundContainer = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+});

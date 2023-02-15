@@ -54,7 +54,7 @@ export default async function UserPage({ params }: UserPageProps) {
         <p>{user.bio}</p>
         <p>{user.email}</p>
         <p>{user.location}</p>
-        <p>Folowers: {user.followers}</p>
+        <p>Followers: {user.followers}</p>
         <p>Following: {user.following}</p>
         {user.location && <UserMap location={user.location} />}
       </UserInfo>

@@ -13,13 +13,16 @@ export const getUserRepos = cache(
     const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN,
     });
+    try {
+      const req = await octokit.request("GET /users/{username}/repos", {
+        username: username,
+        sort: "pushed",
+        per_page: 5,
+      });
 
-    const req = await octokit.request("GET /users/{username}/repos", {
-      username: username,
-      sort: "pushed",
-      per_page: 5,
-    });
-
-    return req.data;
+      return req.data;
+    } catch (error) {
+      return [];
+    }
   }
 );

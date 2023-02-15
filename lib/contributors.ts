@@ -19,18 +19,21 @@ export const getContributors = cache(
     const octokit = new Octokit({
       auth: process.env.GITHUB_TOKEN,
     });
+    try {
+      const req = await octokit.request(
+        "GET /repos/{owner}/{repo}/contributors",
+        {
+          owner,
+          repo,
+          page,
+          per_page: PER_PAGE,
+        }
+      );
 
-    const req = await octokit.request(
-      "GET /repos/{owner}/{repo}/contributors",
-      {
-        owner,
-        repo,
-        page,
-        per_page: PER_PAGE,
-      }
-    );
-
-    return req.data;
+      return req.data;
+    } catch (error) {
+      return [];
+    }
   }
 );
 
