@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { Avatar } from "@/components/avatar";
 import { Text } from "@/components/text";
 import { UserMap } from "@/components/usermap";
@@ -21,10 +22,22 @@ export async function generateStaticParams() {
   return usernames;
 }
 
+export const metadata = {
+  title: {
+    default: "React Contributor",
+    template: "%s | React Contributor",
+  },
+  description: "An detailed view of a React contributor",
+};
+
 export default async function UserPage({ params }: UserPageProps) {
   const { username } = params;
   const user = await getUser({ username });
   const repos = await getUserRepos({ username });
+
+  if (!user || !repos) {
+    notFound();
+  }
   return (
     <Container>
       <UserInfo>
