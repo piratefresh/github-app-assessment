@@ -1,5 +1,6 @@
 import { Nav } from "@/components/nav";
 import "./globals.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 import { Inter } from "@next/font/google";
 import { Container } from "@/components/container";
 
