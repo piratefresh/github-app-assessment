@@ -128,8 +128,6 @@ export const Table = ({
         page: pageIndex + 1,
       });
 
-      console.log("contributors: ", contributors);
-
       setData(contributors);
     };
 
