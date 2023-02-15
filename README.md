@@ -31,6 +31,7 @@ yarn dev
 
 - [ ] loading skeleton
 - [ ] lift pagination state to url params
+- [ ] make table component more generic
 - [ ] dynamic metadata
 - [ ] better error handling on request instead of returning null/empty arrays
 
