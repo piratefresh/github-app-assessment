@@ -12,7 +12,7 @@ const pinStyle = {
   stroke: "none",
 };
 
-function Pin({ size = 20 }) {
+function PinComponent({ size = 20 }) {
   return (
     <svg height={size} viewBox="0 0 24 24" style={pinStyle}>
       <path d={ICON} />
@@ -20,4 +20,4 @@ function Pin({ size = 20 }) {
   );
 }
 
-export default React.memo(Pin);
+export const Pin = React.memo(PinComponent);

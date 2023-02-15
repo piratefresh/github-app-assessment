@@ -1,53 +1,25 @@
 "use client";
-import { css, styled } from "@/stitches.confjg";
-import { ReposContributorsResponse } from "@/types/GithubTypes";
+import {
+  Contributor,
+  Contributors,
+  ReposContributorsResponse,
+} from "@/types/GithubTypes";
 import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
   getSortedRowModel,
   PaginationState,
-  Row,
   SortingState,
   useReactTable,
 } from "@tanstack/react-table";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useInfiniteQuery,
-} from "@tanstack/react-query";
 import Link from "next/link";
 import React from "react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import { Avatar } from "../avatar";
 import { getContributors } from "@/lib/contributors";
 import { Pagination } from "../pagination";
-
-const Th = styled("th", {
-  textAlign: "left",
-});
-
-const ItemsCenter = styled("div", {
-  display: "flex",
-
-  cursor: "pointer",
-});
-const Td = styled("td", {
-  py: "$2",
-});
-
-const UserCell = styled("div", {
-  display: "flex",
-  flexDirection: "column",
-});
-
-const icon = css({
-  height: "$5",
-  width: "$5",
-});
-
-type Contributor = ReposContributorsResponse["data"][0];
-type Contributors = ReposContributorsResponse["data"];
+import { icon, ItemsCenter, Td, Th, UserCell } from "./styles";
 
 export const Table = ({
   users,

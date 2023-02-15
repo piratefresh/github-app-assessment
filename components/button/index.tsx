@@ -13,7 +13,8 @@ export const Button = styled("button", {
   variants: {
     size: {
       sm: {
-        borderRadius: "$md",
+        px: "$3",
+        py: "$2",
       },
     },
   },
