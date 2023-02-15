@@ -30,6 +30,7 @@ yarn dev
 ## Future Improvements
 
 - [ ] loading skeleton
+- [ ] make sorting work with api
 - [ ] lift pagination state to url params
 - [ ] make table component more generic
 - [ ] dynamic metadata
