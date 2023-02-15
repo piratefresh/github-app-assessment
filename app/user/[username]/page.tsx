@@ -1,6 +1,7 @@
 import { Avatar } from "@/components/avatar";
 import { Text } from "@/components/text";
 import { UserMap } from "@/components/usermap";
+import { getContributors } from "@/lib/contributors";
 import { getUser } from "@/lib/getUser";
 import { getUserRepos } from "@/lib/getUserRepos";
 import Link from "next/link";
@@ -8,6 +9,16 @@ import { Container, CardContainer, RepoCard, UserInfo } from "./styles";
 
 interface UserPageProps {
   params: { username: string };
+}
+
+export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const res = getContributors({ owner: "facebook", repo: "react" });
+
+  const usernames = (await res).map((user) => ({ username: user.login }));
+
+  return usernames;
 }
 
 export default async function UserPage({ params }: UserPageProps) {
