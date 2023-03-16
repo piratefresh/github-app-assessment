@@ -104,10 +104,10 @@ export const Table = ({
     };
 
     fetchData();
-  }, [pageIndex]);
+  }, [pageIndex, sorting]);
 
   return (
-    <div className="p-2">
+    <div>
       <table>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
